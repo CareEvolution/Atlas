@@ -1971,11 +1971,6 @@ ul.nav-tabs a i.fa.fa-question-circle-o {
   /* overflow-y: scroll; */
 }
 
-.criteriaTable tr {
-  height: 32px;
-  vertical-align: middle;
-}
-
 conceptset-selector {
   margin-left: 3px;
 }
