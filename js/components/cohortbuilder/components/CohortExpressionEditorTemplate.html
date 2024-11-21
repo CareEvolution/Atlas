@@ -59,7 +59,7 @@
 				<span
 					data-bind="text: ko.i18n('components.cohortExpressionEditor.cohortEntryEventsText_5', 'days after event index date')"></span>
 			</div>
-			<div style="padding-top: 3px" data-bind="with: expression().PrimaryCriteria().PrimaryCriteriaLimit">
+			<div style="margin-top: 5px" data-bind="with: expression().PrimaryCriteria().PrimaryCriteriaLimit">
 				<span
 					data-bind="text: ko.i18n('components.cohortExpressionEditor.cohortEntryEventsText_6', 'Limit initial events to:')"></span>
 				<select data-bind="options: $component.options.resultLimitOptions,

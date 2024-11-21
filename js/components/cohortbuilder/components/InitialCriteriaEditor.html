@@ -1,7 +1,26 @@
 <div class="criteriaHeading">
     <div class="row">
-        <div
+        <div class="col-sm-8"
+            style="padding-left: 0px;"
             data-bind="text: ko.i18n('components.cohortExpressionEditor.cohortEntryEventsText_2', 'Events having any of the following criteria:')">
+        </div>
+        <div class="col-sm-4">
+            <div class="btn-group pull-right">
+                <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
+                    <i class="fa fa-plus"></i>
+                    <span data-bind="text: buttonText"></span>
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" data-bind="foreach:$component.primaryCriteriaOptions">
+                    <li>
+                        <a data-bind="click:action" href="#">
+                            <div class="optionText" data-bind="text: ko.i18n($data.title, $data.defaultTitle)"></div>
+                            <div class="optionDescription"
+                                data-bind="text: ko.i18n($data.description, $data.defaultDescription)"></div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
@@ -22,33 +41,14 @@
                 </div>
             </td>
             <td style="vertical-align: middle;">
-                <button class="btn btn-sm btn-link"
-                    data-bind="title: ko.i18n('components.cohortExpressionEditor.deleteCriteria', 'Delete Criteria'), click: function (data, event) { $component.removePrimaryCriteria(data) }"><i class="fa fa-trash"></i></button>
+                <div class="showOnHover"
+                    data-bind="title: ko.i18n('components.cohortExpressionEditor.deleteCriteria', 'Delete Criteria'), click: function (data, event) { $component.removePrimaryCriteria(data) }">
+                    <i class="fa fa-trash" />
+                </div>
             </td>
         </tr>
     </tbody>
 </table>
-<div class="criteriaHeading">
-    <div class="row">
-        <div class="btn-group">
-            <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-plus"></i>
-                <span data-bind="text: buttonText"></span>
-                <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" data-bind="foreach:$component.primaryCriteriaOptions">
-                <li>
-                    <a data-bind="click:action" href="#">
-                        <div class="optionText" data-bind="text: ko.i18n($data.title, $data.defaultTitle)"></div>
-                        <div class="optionDescription"
-                            data-bind="text: ko.i18n($data.description, $data.defaultDescription)">
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
 
 <from-reusables-modal
     params="{isModalShown: $component.showReusablesModal, type: 'INITIAL_EVENT', parentExpression: $component.expression, callback: $component.insertFromReusable}"></from-reusables-modal>
