@@ -212,12 +212,13 @@
 					<criteria-group
 						params="{expression: $component.expression, group: CorrelatedCriteria, indexMessage: $component.indexMessage}">
 					</criteria-group>
+				</td>
+				<td>
 					<div class="showOnHover"
 						data-bind="click: function() { $component.removeCriterion('CorrelatedCriteria') }, title: ko.i18n('common.remove', 'Remove')">
 						<i class="fa fa-trash" />
 					</div>
 				</td>
-				<td></td>
 			</tr>
 		</table>
 	</div>
