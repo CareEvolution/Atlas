@@ -98,6 +98,22 @@ img.deleteIcon {
 	vertical-align: middle;
 	cursor: pointer;
 }
+
+.showOnHover {
+	visibility: hidden;
+	margin-left: 20px;
+	display: inline;
+	cursor: pointer;
+}
+
+tr:hover > td > .showOnHover {
+	visibility: visible;
+}
+
+.criteriaTableHeader {
+	margin-bottom: 5px;
+}
+
 table.criteriaTable>tbody>tr>td {
 	/* padding-top:3px; */
 	height: 32px;
