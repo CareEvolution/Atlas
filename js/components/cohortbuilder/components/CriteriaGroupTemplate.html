@@ -83,11 +83,14 @@
 								<div>
 									<demographic-criteria params="criteria: $data"></demographic-criteria>
 								</div>
+								<div class="criteriaDeleteDiv">
+									<div data-bind="click: function (data, event) { $component.removeCriteria($parent.group().DemographicCriteriaList, data) }, title: ko.i18n('common.remove', 'Remove')">
+										<i class="fa fa-trash" />
+									</div>
+								</div>
 							</div>
 						</td>
 						<td>
-							<button class="deletecriteria btn btn-sm btn-danger"
-								data-bind="text: ko.i18n('components.criteriaGroup.deleteCriteria', 'Delete Criteria'), click: function (data, event) { $component.removeCriteria($parent.group().DemographicCriteriaList, data) }"></button>
 						</td>
 					</tr>
 				</tbody>
@@ -171,13 +174,16 @@
 								<input type="checkbox" data-bind="checked: IgnoreObservationPeriod">
 								<span
 									data-bind="text:ko.i18n('components.criteriaGroup.criteriaGroupText_2','allow events from outside observation period')"></span><br />
+
+								<div class="criteriaDeleteDiv">
+									<div
+										data-bind="click: function (data, event) { $component.removeCriteria($parent.group().CriteriaList, data) }, title: ko.i18n('common.remove', 'Remove')">
+										<i class="fa fa-trash" />
+									</div>
+								</div>
 							</div>
 						</td>
 						<td>
-							<button class="deletecriteria btn btn-sm btn-danger"
-								data-bind="click: function (data, event) { $component.removeCriteria($parent.group().CriteriaList, data) }">
-								<span data-bind="text:ko.i18n('components.criteriaGroup.deleteCriteria','Delete Criteria')"></span>
-							</button>
 						</td>
 					</tr>
 				</tbody>
@@ -186,18 +192,20 @@
 	</div>
 
 	<!-- ko foreach: group().Groups -->
-	<div class="critera-group-container" style="position:relative">
+	<div class="criteria-group-container" style="position:relative">
 		<criteria-group params="{expression: $component.expression,
 								group: ko.observable($data),
 								parentGroup: $parent.group(),
 								indexMessage: $component.indexMessage}"></criteria-group>
-		<button class="deletegroup btn btn-sm btn-danger"
-			data-bind="click: function (data, event) { $component.removeCriteria($parent.group().Groups, data) }">
-
-			<span data-bind="text:ko.i18n('components.criteriaGroup.deleteGroup','Delete Group')"></span>
-		</button>
 	</div>
 	<!-- /ko -->
+
+	<div class="criteriaDeleteDiv">
+		<div
+			data-bind="click: function() { $component.deleteCriteriaGroup() }, title: ko.i18n('common.remove', 'Remove')">
+			<i class="fa fa-trash" />
+		</div>
+	</div>
 
 	<from-reusables-modal params="{isModalShown: $component.showReusablesModal, type: 'CRITERIA_GROUP', parentExpression: $component.expression, callback: $component.insertFromReusable}"></from-reusables-modal>
 </div>

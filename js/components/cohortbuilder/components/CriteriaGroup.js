@@ -30,6 +30,14 @@ define([
 			return optionsArray;
 		});
 
+		self.deleteCriteriaGroup = function () {
+			if (self.parentGroup) {
+				self.removeCriteria(self.parentGroup().Groups, self.group());
+			} else {
+				self.group(null);
+			}
+		}
+
 		self.getCriteriaComponent = utils.getCriteriaComponent;
 
 		self.addActions = [

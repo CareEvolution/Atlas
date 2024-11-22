@@ -1,5 +1,5 @@
 <div class="criteriaSection" data-bind="with: Criteria">
-	<div style="position: relative">
+	<div>
 		<table class="criteriaTable criteriaTableHeader">
 			<colgroup>
 				<col style="width:100%" />
@@ -139,19 +139,20 @@
 				<td></td>
 			</tr>
 			<tr data-bind="if: CorrelatedCriteria() != null, visible: CorrelatedCriteria() != null">
-				<td style="background-color: white">
+				<td>
 					<criteria-group
 						params="{expression: $component.expression, group: CorrelatedCriteria, indexMessage: $component.indexMessage}">
 					</criteria-group>
 				</td>
-				<td style="vertical-align: middle;">
-					<div class="showOnHover"
-						data-bind="click: function() { $component.removeCriterion('CorrelatedCriteria') }, title: ko.i18n('common.remove', 'Remove')">
-						<i class="fa fa-trash" />
-					</div>
-				</td>
+				<td></td>
 			</tr>
 		</table>
 
+	</div>
+	<div class="criteriaDeleteDiv">
+		<div 
+			data-bind="click: function() { $component.removeCriteria() }, title: ko.i18n('common.remove.criteria', 'Remove criteria')">
+			<i class="fa fa-trash" />
+		</div>
 	</div>
 </div>

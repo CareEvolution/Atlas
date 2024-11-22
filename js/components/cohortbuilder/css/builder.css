@@ -3,9 +3,11 @@ div.criteriaGroup {
 	/* margin-top: 5px; */
 	/* margin-bottom: 5px; */
 	padding-top: 5px;
-	padding-right: 0px;
+	padding-right: 5px;
 	padding-bottom: 5px;
 	padding-left: 5px;
+	border: 1px solid #ccc;
+	background-color: white;
 	/* border-left: solid 1px #ccc; */
 	/* border-top: solid 1px #ccc; */
 	/* border-right: solid 0px black; */
@@ -114,6 +116,21 @@ tr:hover > td > .showOnHover {
 	margin-bottom: 5px;
 }
 
+.criteriaSection:hover > .criteriaDeleteDiv,
+.criteriaGroup:hover > .criteriaDeleteDiv,
+.criteria-content:hover > .criteriaDeleteDiv {
+	visibility: visible;
+}
+
+.criteriaSection > .criteriaDeleteDiv,
+.criteriaGroup > .criteriaDeleteDiv,
+.criteria-content > .criteriaDeleteDiv {
+	display: flex;
+	justify-content: flex-end;
+	visibility: hidden;
+	cursor: pointer;
+}
+
 table.criteriaTable>tbody>tr>td {
 	padding-bottom: 1rem;
 	vertical-align: middle;
@@ -219,16 +236,6 @@ col.delete {
 }
 .thumb-dropdown .dropdown-menu > li > a:hover .thumbnail  {
     display: block;    
-}
-
-div.criteria-group-container {
-    border:  solid 1px #ccc;
-    padding: 5px;
-}
-
-.critera-group-container {
-    border:  solid 1px #ccc;
-    padding: 5px;
 }
 
 .btn.btn-cycle {

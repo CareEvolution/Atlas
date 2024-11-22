@@ -27,7 +27,6 @@
 <table class="criteria">
     <colgroup>
         <col span="1" class="rule" />
-        <col span="1" class="delete" />
     </colgroup>
     <tbody
         data-bind="sortable: {data: ko.unwrap(ko.unwrap(expression).PrimaryCriteria).CriteriaList, connectClass : 'primaryCriteria', options: {cancel: ':input, button, [contenteditable], .undraggable'}}">
@@ -38,12 +37,6 @@
 											name: $component.getCriteriaIndexComponent($data),
 											params: {expression: ko.unwrap($component.expression), criteria: $data}
 										}'></div>
-                </div>
-            </td>
-            <td style="vertical-align: middle;">
-                <div class="showOnHover"
-                    data-bind="title: ko.i18n('components.cohortExpressionEditor.deleteCriteria', 'Delete Criteria'), click: function (data, event) { $component.removePrimaryCriteria(data) }">
-                    <i class="fa fa-trash" />
                 </div>
             </td>
         </tr>

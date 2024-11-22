@@ -14,6 +14,12 @@ define([
     self.Criteria = params.criteria.ConditionEra;
     self.options = options;
 
+    self.removeCriteria = function () {
+      self.expression
+        .PrimaryCriteria()
+        .CriteriaList.remove(params.criteria  );
+    }
+
     self.formatOption = function (d) {
       return (
         '<div class="optionText">' +
