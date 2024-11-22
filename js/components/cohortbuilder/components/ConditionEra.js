@@ -13,6 +13,7 @@ define([
     self.expression = ko.utils.unwrapObservable(params.expression);
     self.Criteria = params.criteria.ConditionEra;
     self.options = options;
+    self.hideClose = params.hideClose;
 
     self.removeCriteria = function () {
       self.expression

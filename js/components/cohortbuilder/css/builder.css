@@ -131,6 +131,11 @@ tr:hover > td > .showOnHover {
 	cursor: pointer;
 }
 
+.rightSideButtons {
+	display: flex;
+	justify-content: flex-end;
+}
+
 table.criteriaTable>tbody>tr>td {
 	padding-bottom: 1rem;
 	vertical-align: middle;

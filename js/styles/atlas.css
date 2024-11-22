@@ -1643,7 +1643,7 @@ cohort-expression-editor td {
 td div.criteria-content {
   padding: 6px;
   background-color: #eee;
-  margin: 1px 5px 5px 0px;
+  margin-bottom: 5px;
   border: solid 1px #ccc;
 }
 
