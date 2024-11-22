@@ -43,7 +43,7 @@
 			class="fa fa-question-circle pull-right"></i>
 	</div>
 	<div class="panel-body">
-		<div class="criteriaGroup">
+		<div style="margin-bottom: 1rem;">
 
 			<initial-criteria-editor params="{expression: expression}"></initial-criteria-editor>
 
@@ -59,7 +59,7 @@
 				<span
 					data-bind="text: ko.i18n('components.cohortExpressionEditor.cohortEntryEventsText_5', 'days after event index date')"></span>
 			</div>
-			<div style="margin-top: 5px" data-bind="with: expression().PrimaryCriteria().PrimaryCriteriaLimit">
+			<div style="margin-top: 1rem;" data-bind="with: expression().PrimaryCriteria().PrimaryCriteriaLimit">
 				<span
 					data-bind="text: ko.i18n('components.cohortExpressionEditor.cohortEntryEventsText_6', 'Limit initial events to:')"></span>
 				<select data-bind="options: $component.options.resultLimitOptions,
