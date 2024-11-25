@@ -28,12 +28,11 @@
 									</a></li>
 							</ul>
 						</div>
-						<button data-bind="if: !$component.hideClose, visible: !$component.hideClose" class="btn btn-sm btn-link"
-							data-bind="click: function() { $component.removeCriteria() }, title: ko.i18n('common.remove.criteria', 'Remove criteria')">
+						<button class="btn btn-sm btn-link"
+							data-bind="if: !$component.hideClose, visible: !$component.hideClose, click: function() { $component.removeCriteria() }, title: ko.i18n('common.remove.criteria', 'Remove criteria')">
 							<i class="fa fa-trash" />
 						</button>
 					</div>
-
 				</td>
 			</tr>
 		</table>

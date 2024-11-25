@@ -86,6 +86,12 @@ define([
     self.expression = ko.utils.unwrapObservable(params.expression);
     self.Criteria = params.criteria.Death;
     self.options = options;
+    self.hideClose = params.hideClose;
+
+    self.removeCriteria = function () {
+      self.expression.PrimaryCriteria().CriteriaList.remove(params.criteria);
+    };
+
 
     self.removeCriterion = function (propertyName) {
       self.Criteria[propertyName](null);

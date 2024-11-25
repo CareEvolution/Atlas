@@ -25,6 +25,11 @@ define([
     self.expression = ko.utils.unwrapObservable(params.expression);
     self.Criteria = params.criteria.ConditionOccurrence;
     self.options = options;
+    self.hideClose = params.hideClose;
+
+    self.removeCriteria = function () {
+      self.expression.PrimaryCriteria().CriteriaList.remove(params.criteria);
+    };
 
     self.formatOption = function (d) {
       return (
