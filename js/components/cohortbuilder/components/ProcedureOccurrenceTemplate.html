@@ -14,17 +14,24 @@
 					</conceptset-selector>
 				</td>
 				<td>
-					<div class="btn-group pull-right">
-						<button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
-							<i class="fa fa-plus"></i>
-							<span data-bind="text: ko.i18n('components.conditionProcedureOccurrence.addAttribute', 'Add attribute...')"></span>
-							<span class="caret"></span></button>
-						<ul class="dropdown-menu" data-bind="foreach:$component.addActions">
-							<li><a data-bind="click:action" href="#">
-								<div class="optionText" data-bind="text: ko.i18n($data.title, $data.defaultTitle)"></div>
-								<div class="optionDescription" data-bind="text: ko.i18n($data.description, $data.defaultDescription)"></div>
-							</a></li>
-						</ul>
+
+					<div class="rightSideButtons">
+						<div class="btn-group">
+							<button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+								<i class="fa fa-plus"></i>
+								<span data-bind="text: ko.i18n('components.conditionProcedureOccurrence.addAttribute', 'Add attribute...')"></span>
+								<span class="caret"></span></button>
+							<ul class="dropdown-menu" data-bind="foreach:$component.addActions">
+								<li><a data-bind="click:action" href="#">
+										<div class="optionText" data-bind="text: ko.i18n($data.title, $data.defaultTitle)"></div>
+										<div class="optionDescription" data-bind="text: ko.i18n($data.description, $data.defaultDescription)"></div>
+									</a></li>
+							</ul>
+						</div>
+						<button class="btn btn-sm btn-link"
+							data-bind="if: !$component.hideClose, visible: !$component.hideClose, click: function() { $component.removeCriteria() }, title: ko.i18n('common.remove.criteria', 'Remove criteria')">
+							<i class="fa fa-trash" />
+						</button>
 					</div>
 				</td>
 			</tr>
@@ -175,15 +182,10 @@
 				<td></td>
 			</tr>
 			<tr data-bind="if: CorrelatedCriteria() != null, visible: CorrelatedCriteria() != null">
-				<td style="background-color: white">
+				<td>
 					<criteria-group params="{expression: $component.expression, group: CorrelatedCriteria, indexMessage: $component.indexMessage}"></criteria-group>
 				</td>
-				<td style="vertical-align: middle;">
-					<div class="showOnHover"
-						data-bind="click: function() { $component.removeCriterion('CorrelatedCriteria') }, title: ko.i18n('common.remove', 'Remove')">
-						<i class="fa fa-trash" />
-					</div>
-				</td>
+				<td></td>
 			</tr>
 		</table>
 	</div>
